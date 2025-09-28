@@ -32,4 +32,27 @@ const UserSchema = new mongoose.Schema({
 
 const User = mongoose.model('User',UserSchema);
 
+async function fetchInformation(){
+    const users = await User.findById('68d8fe7bfe681bf45274fbe6');
+    console.log(users);
+}
+
+fetchInformation();
+
+
+
+// async function storeInformation(){
+//     const user = new User({
+//     name : 'EngBicir',
+//     age : 24,
+//     isMarried : false,
+//     salary : 80000,
+//     gender : 'Male',
+// });
+//     await user.save();
+//     console.log(user);
+
+// }
+
+// storeInformation();
 
