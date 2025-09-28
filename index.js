@@ -33,7 +33,7 @@ const UserSchema = new mongoose.Schema({
 const User = mongoose.model('User',UserSchema);
 
 async function fetchInformation(){
-    const users = await User.findById('68d8fe7bfe681bf45274fbe6');
+    const users = await User.find({isMarried: false}).countDocuments();
     console.log(users);
 }
 
