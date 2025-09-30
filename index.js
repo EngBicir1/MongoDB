@@ -131,4 +131,11 @@ const User = mongoose.model('User',UserSchema);
     
 // }
 
-// Updateuser();
+// Delete ID
+async function Updateuser(){
+
+    await User.findByIdAndDelete('6027d22c7dd46d17c04bdf90');
+    
+}
+
+Updateuser();
