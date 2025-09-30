@@ -22,22 +22,22 @@ mongoose.connect('mongodb://127.0.0.1:27017/test')
 */
 
 
-const UserSchema = new mongoose.Schema({
-    name : String,
-    age : Number,
-    isMarried: Boolean,
-    salary: Number,
-    gender: String,
-})
+// const UserSchema = new mongoose.Schema({
+//     name : String,
+//     age : Number,
+//     isMarried: Boolean,
+//     salary: Number,
+//     gender: String,
+// })
 
-const User = mongoose.model('User',UserSchema);
+// const User = mongoose.model('User',UserSchema);
 
-async function fetchInformation(){
-    const users = await User.find({isMarried: false}).countDocuments();
-    console.log(users);
-}
+// async function fetchInformation(){
+//     const users = await User.find({isMarried: false}).countDocuments();
+//     console.log(users);
+// }
 
-fetchInformation();
+// fetchInformation();
 
 
 
@@ -55,4 +55,61 @@ fetchInformation();
 // }
 
 // storeInformation();
+
+
+
+// comparison operator
+
+// eq equal
+// ne not equal
+// gt creator then
+// gte creator then equal
+// lt lss then
+// lte lss then equal
+// in 
+// nin not in
+
+
+// const UserSchema = new mongoose.Schema({
+//     name : String,
+//     age : Number,
+//     isMarried: Boolean,
+//     salary: Number,
+//     gender: String,
+// })
+
+// const User = mongoose.model('User',UserSchema);
+
+// async function fetchInformation(){
+//     const users = await User.find({salary: {$nin: [25000,40000,45000 ]}});
+//     console.log(users);
+// }
+
+// fetchInformation();
+
+
+
+
+
+// logical oparators
+
+// or 
+// and
+
+const UserSchema = new mongoose.Schema({
+    name : String,
+    age : Number,
+    isMarried: Boolean,
+    salary: Number,
+    gender: String,
+})
+
+const User = mongoose.model('User',UserSchema);
+
+async function fetchInformation(){
+    const users = await User.find({salary: {$nin: [25000,40000,45000 ]}});
+    console.log(users);
+}
+
+fetchInformation();
 
