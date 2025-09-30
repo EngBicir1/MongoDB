@@ -106,10 +106,14 @@ const UserSchema = new mongoose.Schema({
 
 const User = mongoose.model('User',UserSchema);
 
-async function fetchInformation(){
-    const users = await User.find({salary: {$nin: [25000,40000,45000 ]}});
+async function db(){
+
+    const users = await User.find().or([ 
+        {age: {$in: [30,40,60]}}
+    ]).select('name').sort('-name');
     console.log(users);
+    
 }
 
-fetchInformation();
+db();
 
