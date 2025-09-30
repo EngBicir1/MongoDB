@@ -106,14 +106,29 @@ const UserSchema = new mongoose.Schema({
 
 const User = mongoose.model('User',UserSchema);
 
-async function db(){
+// async function db(){
 
-    const users = await User.find().or([ 
-        {age: {$in: [30,40,60]}}
-    ]).select('name').sort('-name');
-    console.log(users);
+//     const users = await User.find().or([ 
+//         {age: {$in: [30,40,60]}}
+//     ]).select('name').sort('-name');
+//     console.log(users);
     
-}
+// }
 
-db();
+// db();
 
+// update Data in mongooos
+
+
+// findByIdAndUpdate
+
+// async function Updateuser(){
+
+//     const user = await User.findByIdAndUpdate('68d8fe7bfe681bf45274fbe6',
+//         {age: 45 , isMarried: false},
+//         {new: true,runValidators: true}
+//     );
+    
+// }
+
+// Updateuser();
